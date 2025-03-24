@@ -1,0 +1,277 @@
+/*SOMMAIRE :
+1/ Je définis les paramètres de mon body
+2/ Mise en forme de l'acceuil
+3/ Mise en forme de mes projets
+4/ Mise en forme du bouton vers mon CV
+5/ Mise en forme pied de page
+6/ Media queries pour adapter aux téléphones
+7/ Media queries pour adapter aux tablettes
+*/
+
+/* //PARAMETRES BODY// */
+body {
+    width: 100%;
+    height: 100%;
+}
+
+/* //MISE EN FORME ACCEUIL// */
+.acceuil {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgb(0, 84, 120) ;
+    padding: 100px;
+    padding-left: 250px;
+    padding-right: 250px;/*J'aère un maximum*/ 
+    width: auto; /*En auto pour un site plus responsive*/
+}
+
+.acceuil-text { /*Mise en forme du texte*/
+    display: flex;
+    flex-direction: column;
+    width: auto;
+}
+
+h1 {
+    font-size: 96px;
+    font-weight: bold;
+    color: white;
+    font-family: "IBM Plex Mono", monospace;
+}
+
+.acceuil-text p {
+    font-size: 20px;
+    font-weight: normal;
+    color: white;
+    font-family: "IBM Plex Mono", monospace;
+    max-width: 630px;
+}
+
+header img {
+    max-width: 512px;/*Pour une image responsive*/
+    object-fit: cover;/*Pour que l'image garde ses proportions*/
+    border-radius: 20px;
+    width: 100%;
+    margin: 20px;
+}
+
+/* //MISE EN FORME PROJETS// */
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 50px;
+}
+
+main h2 {
+    font-family: "IBM Plex Mono", monospace;
+    color: black;
+    font-size: 40px ;
+    font-weight: bold;
+}
+
+.projets {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin: 40px;
+    gap: 40px;
+}
+
+.site-japon,
+.jankenpon {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 498px;
+    max-height: 480px;
+    background-color: rgb(0, 84, 120);
+    padding: 40px;
+    border-radius: 20px;
+}
+
+.site-japon img {
+    max-width: 382px;/*Pour une image responsive*/
+    object-fit: cover;/*Pour que l'image garde ses proportions*/
+}
+
+.jankenpon img {
+    max-width: 330px;/*Pour une image responsive*/
+    object-fit: cover;/*Pour que l'image garde ses proportions*/
+}
+
+.site-japon h3,
+.jankenpon h3 {
+    font-family: "IBM Plex Mono", monospace;
+    color: white;
+    font-size: 24px ;
+    font-weight: bold;
+    padding-top: 20px;
+}
+
+.site-japon p,
+.jankenpon p {
+    font-family: "IBM Plex Mono", monospace;
+    color: white;
+    font-size: 20px ;
+    font-weight: medium;
+    padding-top: 20px;
+    padding-bottom: 20px ;
+}
+
+.liens img {
+    max-width: 34px;/*Pour une image responsive*/
+    object-fit: cover;/*Pour que l'image garde ses proportions*/
+    fill: white;
+}
+
+.liens a:hover {
+    cursor: pointer;/*Pour que le curseur change qund on page sur le bouton*/
+}
+
+main ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 20px;
+}
+
+/* //MISE EN FORME BOUTON CV// */
+#cv {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(0, 84, 120);
+    border-radius: 20px;
+    width: 350px;
+    height: 60px;
+    text-decoration: none;
+    color: white;
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 100px;
+    margin-bottom: 200px;
+}
+
+#cv:hover {
+    cursor: pointer;/*Pour que le curseur change qund on page sur le bouton*/
+}
+
+/* //MISE EN FORME PIED DE PAGE// */
+footer {
+    width: 100%;
+    position: static;
+    bottom: 0;
+    background-color: rgb(0, 84, 120);
+    height: 70px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+
+}
+
+footer p {
+    font-family: "IBM Plex Mono", monospace;
+    color: white;
+    font-size: 16px ;
+    font-weight: bold;
+}
+
+
+
+/* //MEDIA QUERIES POUR TELEPHONES// */
+/*Je change la disposition des éléments, la taille des polices et quelques marges pour 
+que cela s'adapte mieux aux petits écrans.*/
+@media screen and (max-width: 600px) {
+    .acceuil {
+        flex-direction: column;
+        align-items: left;
+        gap: 15px;
+        padding-left: 50px;
+        padding-right: 50px;
+    }
+
+    .acceuil img {
+        width: 95%;/*Afin que les images raptissisent ou grandissent selon la taille de l'écran*/
+    }
+    .projets {
+        flex-direction: column;
+        width: 95%;
+        height: 100%;
+    }
+
+    .projets img {
+        width: 95%;
+    }
+
+    h1 {
+        font-size: 40px;
+    }
+
+    .acceuil p {
+        font-size: 14px;
+    }
+
+    h2 {
+        font-size: 20px;
+    }
+
+    h3 {
+        font-size: 18px;
+    }
+
+    .projets p {
+        font-size: 12px;
+    }
+}
+
+/* //MEDIA QUERIES POUR TABLETTES// */
+/*Je change la disposition des éléments, la taille des polices et quelques marges pour 
+que cela s'adapte mieux aux écrans de taille moyenne.*/
+@media screen and (min-width: 600px) and (max-width: 1024px) {
+    .acceuil {
+        flex-direction: column;
+        align-items: left;
+        gap: 20px;
+        padding-left: 70px;
+        padding-right: 70px;
+    }
+
+    .acceuil img {
+        width: 95%;/*Afin que les images raptissisent ou grandissent selon la taille de l'écran*/
+    }
+    .projets {
+        flex-direction: column;
+        align-items: center;
+        width: 95%;
+        height: 100%;
+    }
+
+    .projets img {
+        width: 95%;
+    }
+
+    h1 {
+        font-size: 60px;
+    }
+
+    .acceuil p {
+        font-size: 18px;
+    }
+
+    h2 {
+        font-size: 24px;
+    }
+
+    h3 {
+        font-size: 22px;
+    }
+
+    .projets p {
+        font-size: 16px;
+    }
+}

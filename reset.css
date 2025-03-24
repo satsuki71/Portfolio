@@ -1,0 +1,9 @@
+/*Mon fichier reset afin d'enlever certains style appliqués par le navigateur*/
+* {
+    margin: 0;
+}
+
+ul, ol {
+    list-style: none;
+    padding-inline-start: 0;
+}
