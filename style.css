@@ -3,34 +3,35 @@
 2/ Mise en forme de l'acceuil
 3/ Mise en forme de mes projets
 4/ Mise en forme du bouton vers mon CV
-5/ Mise en forme pied de page
-6/ Media queries pour adapter aux téléphones
-7/ Media queries pour adapter aux tablettes
-*/
+5/ Mise en forme pied de page*/
 
 /* //PARAMETRES BODY// */
-body {
-    width: 100%;
-    height: 100%;
+header {
+    min-height: 100vh;
+    background-color: rgb(0, 84, 120);
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 /* //MISE EN FORME ACCEUIL// */
-.acceuil {
+.accueil {
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
     align-items: center;
-    background-color: rgb(0, 84, 120) ;
-    padding: 100px;
-    padding-left: 250px;
-    padding-right: 250px;/*J'aère un maximum*/ 
-    width: auto; /*En auto pour un site plus responsive*/
+    margin: 0 auto;
+    flex-wrap: wrap;/*Permet que les éléments passent à la ligne si taille d'écran insuffisante*/
+    gap: 2rem;
+    padding-inline: 2rem;
+    max-width: 1000px;
 }
 
-.acceuil-text { /*Mise en forme du texte*/
-    display: flex;
-    flex-direction: column;
-    width: auto;
+.accueil > * { /*Sélectionne tous les éléments dans la class accueil*/
+    flex: 1 1 250px;/*Fonctionne avec flex wrap*/
+}
+
+.accueil > img { /*Séléctionne l'image d'accueil*/
+    max-width: 450px;
+    object-fit: cover;
 }
 
 h1 {
@@ -40,7 +41,7 @@ h1 {
     font-family: "IBM Plex Mono", monospace;
 }
 
-.acceuil-text p {
+.accueil-text p {
     font-size: 20px;
     font-weight: normal;
     color: white;
@@ -62,6 +63,7 @@ main {
     flex-direction: column;
     align-items: center;
     margin-top: 50px;
+    
 }
 
 main h2 {
@@ -77,6 +79,7 @@ main h2 {
     justify-content: center;
     margin: 40px;
     gap: 40px;
+    flex-wrap: wrap;
 }
 
 .site-japon,
@@ -89,6 +92,7 @@ main h2 {
     background-color: rgb(0, 84, 120);
     padding: 40px;
     border-radius: 20px;
+    flex: 1 1 250px;
 }
 
 .site-japon img {
@@ -181,97 +185,4 @@ footer p {
     font-weight: bold;
 }
 
-
-
-/* //MEDIA QUERIES POUR TELEPHONES// */
-/*Je change la disposition des éléments, la taille des polices et quelques marges pour 
-que cela s'adapte mieux aux petits écrans.*/
-@media screen and (max-width: 600px) {
-    .acceuil {
-        flex-direction: column;
-        align-items: left;
-        gap: 15px;
-        padding-left: 50px;
-        padding-right: 50px;
-    }
-
-    .acceuil img {
-        width: 95%;/*Afin que les images raptissisent ou grandissent selon la taille de l'écran*/
-    }
-    .projets {
-        flex-direction: column;
-        width: 95%;
-        height: 100%;
-    }
-
-    .projets img {
-        width: 95%;
-    }
-
-    h1 {
-        font-size: 40px;
-    }
-
-    .acceuil p {
-        font-size: 14px;
-    }
-
-    h2 {
-        font-size: 20px;
-    }
-
-    h3 {
-        font-size: 18px;
-    }
-
-    .projets p {
-        font-size: 12px;
-    }
-}
-
-/* //MEDIA QUERIES POUR TABLETTES// */
-/*Je change la disposition des éléments, la taille des polices et quelques marges pour 
-que cela s'adapte mieux aux écrans de taille moyenne.*/
-@media screen and (min-width: 600px) and (max-width: 1024px) {
-    .acceuil {
-        flex-direction: column;
-        align-items: left;
-        gap: 20px;
-        padding-left: 70px;
-        padding-right: 70px;
-    }
-
-    .acceuil img {
-        width: 95%;/*Afin que les images raptissisent ou grandissent selon la taille de l'écran*/
-    }
-    .projets {
-        flex-direction: column;
-        align-items: center;
-        width: 95%;
-        height: 100%;
-    }
-
-    .projets img {
-        width: 95%;
-    }
-
-    h1 {
-        font-size: 60px;
-    }
-
-    .acceuil p {
-        font-size: 18px;
-    }
-
-    h2 {
-        font-size: 24px;
-    }
-
-    h3 {
-        font-size: 22px;
-    }
-
-    .projets p {
-        font-size: 16px;
-    }
-}
+/*Je n'utilise pas de media queries car le site est responsive avec flexbox*/
